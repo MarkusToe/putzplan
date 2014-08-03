@@ -1,4 +1,6 @@
 Putzplan::Application.routes.draw do
+  get "static_pages/home"
+  get "static_pages/help"
   resources :users
 
   match '/signup', to: 'users#new', via: 'get'
