@@ -3,3 +3,10 @@
   <%= gravatar_for @user %>
   <%= @user.name %>
 </h1>
+
+<h2>Upcoming Activities</h2>
+<% if @user.activities.any? %>
+    <h3>My Activities</h3>
+<% else %>
+    <p>No activities? <%= button_to "Get activities!", "#" %></p>
+<% end %>
