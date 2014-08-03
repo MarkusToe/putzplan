@@ -1,5 +1,4 @@
 Putzplan::Application.routes.draw do
-  get "activity/new"
   root  'static_pages#home'
 
   match '/help',    to: 'static_pages#help',    via: 'get'
@@ -8,6 +7,7 @@ Putzplan::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :cleaning_dates, only: [:create]
 
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'

@@ -15,3 +15,7 @@ end
 When /^the user asks for activities$/ do
   click_button "Get activities!"
 end
+
+Then /^they should get activities assigned$/ do
+  expect(page).to have_text("My Activities")
+end

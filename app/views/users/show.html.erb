@@ -7,6 +7,9 @@
 <h2>Upcoming Activities</h2>
 <% if @user.activities.any? %>
     <h3>My Activities</h3>
+    <ul>
+        <%= render(@user.cleaning_dates) %>
+    </ul>
 <% else %>
-    <p>No activities? <%= button_to "Get activities!", "#" %></p>
+    <p>No activities? <%= button_to "Get activities!", cleaning_dates_path %></p>
 <% end %>
